@@ -1,0 +1,57 @@
+.htree-level ul {
+  margin: 10px;
+}
+
+.htree-level {
+}
+
+.htree-level .level-properties {
+  padding: 10px;
+  background-color: #eee;
+}
+
+.htree-level .level-name-box {
+  background-color: #345;
+  height: 40px;
+  color: white;
+}
+.htree-level .level-name {
+  display: inline-block;
+  padding: 10px;
+  font-size: 14px;
+  margin: 0;
+  height: 36px;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.htree-level .level-children {
+  margin-left: 20px;
+}
+
+.htree-level .property {
+  padding: 5px 0px 5px 0px;
+}
+
+.htree-level .property-name {
+  text-transform: uppercase;
+  font-family: 'Courier New';
+  font-weight: bolder;
+}
+
+.htree-level .type {
+  float: right;
+  padding: 10px;
+  height: 40px;
+  font-family: 'Courier New';
+  font-weight: bold;
+}
+.htree-level .type-circle {
+  background-color: #0a6;
+}
+.htree-level .type-role {
+  background-color: #e80;
+}
+.htree-level .type-special-role {
+  background-color: #e33;
+}
