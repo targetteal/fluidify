@@ -4,13 +4,10 @@ import Drops from '../../api/drops/drops.js';
 import Streams from '../../api/streams/streams.js';
 
 function createStartupData() {
-  const TYPE_CIRCLE = 'circle';
-  const TYPE_ROLE = 'role';
-  const TYPE_SPECIAL_ROLE = 'special-role';
 
   const O2_CORE_ROLE_FACILITATOR = {
     name: 'Facilitator',
-    type: TYPE_SPECIAL_ROLE,
+    type: Drops.TYPE_SPECIAL_ROLE,
     properties: {
       purpose: 'Healthy circle meetings aligned with the Game Book',
       artifacts: [],
@@ -19,7 +16,7 @@ function createStartupData() {
   };
   const O2_CORE_ROLE_SECRETARY = {
     name: 'Secretary',
-    type: TYPE_SPECIAL_ROLE,
+    type: Drops.TYPE_SPECIAL_ROLE,
     properties: {
       purpose: 'Accurate record keeping of the circle structural records',
       accountabilities: [
@@ -31,7 +28,7 @@ function createStartupData() {
   };
   const O2_CORE_ROLE_EXTERNAL_LINK = {
     name: 'External Link',
-    type: TYPE_SPECIAL_ROLE,
+    type: Drops.TYPE_SPECIAL_ROLE,
     properties: {
       purpose: 'The circle\'s purpose',
       accountabilities: [
@@ -44,7 +41,7 @@ function createStartupData() {
   };
   const O2_CORE_ROLE_INTERNAL_LINK = {
     name: 'Internal Link',
-    type: TYPE_SPECIAL_ROLE,
+    type: Drops.TYPE_SPECIAL_ROLE,
     properties: {
       purpose: 'The circle\'s purpose',
       accountabilities: [
@@ -80,7 +77,7 @@ function createStartupData() {
   const targetTealCircle = {
     name: 'Target Teal',
     createdAt: (new Date()).getTime(),
-    type: TYPE_CIRCLE,
+    type: Drops.TYPE_CIRCLE,
     properties: {
       purpose: 'Seeding evolutionary social systems',
     },
@@ -92,7 +89,7 @@ function createStartupData() {
 
   const contentProducerRole = {
     name: 'Content Producer',
-    type: TYPE_ROLE,
+    type: Drops.TYPE_ROLE,
     properties: {
       purpose: 'The best contents about the future of work',
       artifacts: [],
@@ -109,7 +106,7 @@ function createStartupData() {
   Drops.insert(contentProducerRole);
   const multiAgentCircle = {
     name: 'Multi-Agent Workshops',
-    type: TYPE_CIRCLE,
+    type: Drops.TYPE_CIRCLE,
     properties: {
       purpose: 'Multi-Agent worksohps perfectly coordinated',
     },
