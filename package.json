@@ -4,6 +4,7 @@
   "scripts": {
     "start": "meteor run",
     "lint": "eslint .",
+    "test": "TEST_WATCH=1 meteor test --driver-package practicalmeteor:mocha",
     "pretest": "npm run lint --silent"
   },
   "eslintConfig": {

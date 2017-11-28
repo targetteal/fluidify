@@ -31,15 +31,24 @@ if (Meteor.isServer) {
 
       describe('hasChildren()', () => {
         it('should return true if there are children', () => {
-          const circle = Drops.find({ _id: circleId }).fetch()[0];
+          const circle = Drops.findOne({ _id: circleId });
           assert.isOk(circle);
           assert.isTrue(circle.hasChildren());
         });
 
         it('should return false if there are no children', () => {
-          const role = Drops.find({ _id: roleId }).fetch()[0];
+          const role = Drops.findOne({ _id: roleId });
           assert.isOk(role);
           assert.isFalse(role.hasChildren());
+        });
+      });
+
+      describe('children()', () => {
+        it('should return the children of a given drop', () => {
+          const circle = Drops.findOne({ _id: circleId });
+          const children = circle.children();
+          assert.isArray(children);
+          assert.equal(children[0]._id, roleId);
         });
       });
     });
