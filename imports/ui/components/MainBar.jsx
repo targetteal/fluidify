@@ -1,5 +1,5 @@
+import { Meteor } from 'meteor/meteor';
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Nav, Navbar, NavDropdown, MenuItem } from 'react-bootstrap/lib';
 import { Link } from 'react-router-dom';
 
@@ -8,17 +8,27 @@ import BaseComponent from './BaseComponent.jsx';
 // A replacement for the react-bootstrap NavItem that works with that renders a react-router Link
 function NavItem(props) {
   // eslint-disable-next-line
-  return (<li role="presentatiaon"><Link to={props.href}>{props.children}</Link></li>);
+  return (<li role="presentation"><Link to={props.href}>{props.children}</Link></li>);
 }
 
 export default class MainBar extends BaseComponent {
+  constructor(props) {
+    super(props);
+    this.logout = this.logout.bind(this);
+  }
+
+  logout() {
+    Meteor.logout();
+    this.props.history.push('/');
+  }
+
   renderLoggedIn() {
     return (
       <Nav pullRight>
-        <NavDropdown title={this.props.user.username} id="basic-nav-dropdown">
-          <MenuItem href="/settings">Settings</MenuItem>
+        <NavDropdown title={this.props.user.email} id="basic-nav-dropdown">
+          <NavItem href="/settings/">Settings</NavItem>
           <MenuItem divider />
-          <MenuItem onClick={this.props.logout}>Logout</MenuItem>
+          <MenuItem onClick={this.logout}>Logout</MenuItem>
         </NavDropdown>
       </Nav>
     );
@@ -26,8 +36,8 @@ export default class MainBar extends BaseComponent {
   renderLoggedOut() {
     return (
       <Nav pullRight>
-        <NavItem href="/login">Login</NavItem>
-        <NavItem href="/signup">Sign Up</NavItem>
+        <NavItem href="/login/">Login</NavItem>
+        <NavItem href="/signup/">Sign Up</NavItem>
       </Nav>
     );
   }
@@ -37,20 +47,20 @@ export default class MainBar extends BaseComponent {
       <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="/">Fluidify</a>
+            <Link to="/">Fluidify</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
             <NavDropdown title="My Organization" id="basic-nav-dropdown">
-              <MenuItem href="/tree/">View Structure as Tree</MenuItem>
-              <MenuItem href="/holarchy/">View Structure as Holarchy</MenuItem>
-              <MenuItem href="/waves/create/">Create Wave (modify structure)</MenuItem>
-              <MenuItem href="/changes/">View last changes</MenuItem>
-              <MenuItem href="/users/">Users</MenuItem>
+              <NavItem href="/tree/">View Structure as Tree</NavItem>
+              <NavItem href="/holarchy/">View Structure as Holarchy</NavItem>
+              <NavItem href="/waves/create/">Create Wave (modify structure)</NavItem>
+              <NavItem href="/changes/">View last changes</NavItem>
+              <NavItem href="/users/">Users</NavItem>
               <MenuItem divider />
-              <MenuItem href="/">Settings</MenuItem>
+              <NavItem href="/">Settings</NavItem>
             </NavDropdown>
             <NavItem href="/public/">Public</NavItem>
           </Nav>
@@ -64,8 +74,3 @@ export default class MainBar extends BaseComponent {
     );
   }
 }
-
-MainBar.propTypes = {
-  user: PropTypes.object,
-  logout: PropTypes.func,
-};

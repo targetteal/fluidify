@@ -9,8 +9,14 @@ export default withTracker(() => {
   const streamsHandle = Meteor.subscribe('streams');
   const streams = Streams.find({});
   const stream = streams.count() === 1 ? streams.fetch()[0] : null;
+  const user = Meteor.user();
+
+  if (user) {
+    user.email = user.emails[0].address;
+  }
+
   return {
-    user: Meteor.user(),
+    user,
     loading: !dropsHandle.ready() || !streamsHandle.ready(),
     connected: Meteor.status().connected,
     stream,

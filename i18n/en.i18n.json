@@ -2,7 +2,7 @@
   "components": {
     "userMenu": {
       "logout": "Logout",
-      "login": "Sign In",
+      "login": "Login",
       "join": "Join"
     },
     "connectionNotification": {
@@ -40,6 +40,7 @@
       "emailRequired": "Email required",
       "passwordRequired": "Password required",
       "passwordConfirm": "Please confirm your password",
+      "passwordsDontMatch": "Passwords don't match",
       "join": "Join.",
       "joinReason": "Joining allows you to make private lists",
       "yourEmail": "Your Email",
@@ -48,14 +49,14 @@
       "joinNow": "Join Now",
       "haveAccountSignIn": "Have an account? Sign in"
     },
-    "authPageSignIn": {
+    "loginPage": {
       "emailRequired": "Email required",
       "passwordRequired": "Password required",
       "signIn": "Sign In.",
       "signInReason": "Signing in allows you to view private lists",
       "yourEmail": "Your Email",
       "password": "Password",
-      "signInButton": "Sign in",
+      "loginButton": "Login",
       "needAccount": "Need an account? Join Now."
     },
     "listPage": {

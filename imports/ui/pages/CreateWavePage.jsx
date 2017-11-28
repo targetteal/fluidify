@@ -1,20 +1,19 @@
-import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import i18n from 'meteor/universe:i18n';
 import BaseComponent from '../components/BaseComponent.jsx';
 
-export default class LoginPage extends BaseComponent {
-  constructor(props) {
-    super(props);
-  }
-
+export default class CreateWavePage extends BaseComponent {
   render() {
     return (
-      <div>
-        <h2>Create New Wave </h2>
-      </div>
+      <h1>Create New Wave</h1>
     );
   }
 }
+
+CreateWavePage.defaultProps = {
+  user: null,
+};
+
+CreateWavePage.propTypes = {
+  user: PropTypes.object,
+};

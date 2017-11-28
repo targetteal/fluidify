@@ -25,3 +25,4 @@ universe:i18n
 session
 accounts-base
 ddp-rate-limiter
+accounts-password
