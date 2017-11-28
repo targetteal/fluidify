@@ -3,7 +3,6 @@ import { Meteor } from 'meteor/meteor';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 class DropsCollection extends Mongo.Collection {
-
 }
 
 const Drops = new DropsCollection('drops');
@@ -39,5 +38,9 @@ Drops.helpers({
     return Drops.find({ parentId: this._id }).fetch();
   },
 });
+
+Drops.TYPE_CIRCLE = 'circle';
+Drops.TYPE_ROLE = 'role';
+Drops.TYPE_SPECIAL_ROLE = 'special-role';
 
 export default Drops;
