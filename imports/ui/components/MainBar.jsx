@@ -47,8 +47,7 @@ export default class MainBar extends BaseComponent {
       <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <img src="/images/logo-32.png" alt="Logo" />
-            <Link to="/">Fluidify</Link>
+            <Link to="/"><img src="/images/logo-128.png" alt="Logo" />Fluidify</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

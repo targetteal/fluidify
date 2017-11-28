@@ -32,11 +32,17 @@ input {
   text-transform: uppercase;
   font-weight: bold;
   color: white !important;
-  padding: 0px !important;
+  padding: 10px !important;
 }
+
+.navbar-brand a {
+  color: white;
+}
+
 .navbar-brand img {
-  display: inline-block;
-  margin-right: 10px;
+  display: inline-block !important;
+  margin-right: 5px;
+  height: 30px;
 }
 
 .btn-default,
