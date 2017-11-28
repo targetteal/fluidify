@@ -27,8 +27,8 @@ export default class App extends React.Component {
       return <HTreePage user={user} stream={stream} />;
     }
 
-    function PageWithBarWrapper(component) {
-      return function Wrapper(props) {
+    function WrapWithLayout(component) {
+      return function DefaultLayout(props) {
         const { history } = props;
         return (
           <div>
@@ -44,12 +44,12 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={PageWithBarWrapper(HomePage)} />
-          <Route path="/tree/" component={PageWithBarWrapper(HTreePageWrapper)} />
-          <Route path="/waves/create/" component={PageWithBarWrapper(CreateWavePage)} />
-          <Route path="/login/" component={PageWithBarWrapper(LoginPage)} />
-          <Route path="/signup/" component={PageWithBarWrapper(SignupPage)} />
-          <Route path="*" component={PageWithBarWrapper(NotFoundPage)} />
+          <Route exact path="/" component={WrapWithLayout(HomePage)} />
+          <Route path="/tree/" component={WrapWithLayout(HTreePageWrapper)} />
+          <Route path="/waves/create/" component={WrapWithLayout(CreateWavePage)} />
+          <Route path="/login/" component={WrapWithLayout(LoginPage)} />
+          <Route path="/signup/" component={WrapWithLayout(SignupPage)} />
+          <Route path="*" component={WrapWithLayout(NotFoundPage)} />
         </Switch>
       </BrowserRouter>
     );

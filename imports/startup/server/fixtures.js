@@ -71,7 +71,7 @@ function createStartupData() {
     ];
     for (let i = 0; i < coreRoles.length; i += 1) {
       const copy = _.clone(coreRoles[i]);
-      copy.parent = circleId;
+      copy.parentId = circleId;
       copy.streamId = streamId;
       Drops.insert(copy);
     }
