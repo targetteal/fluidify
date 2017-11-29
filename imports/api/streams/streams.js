@@ -5,7 +5,6 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import Drops from '../drops/drops.js';
 
 class StreamsCollection extends Mongo.Collection {
-
 }
 
 const Streams = new StreamsCollection('streams');

@@ -4,7 +4,6 @@ import Drops from '../../api/drops/drops.js';
 import Streams from '../../api/streams/streams.js';
 
 function createStartupData() {
-
   const O2_CORE_ROLE_FACILITATOR = {
     name: 'Facilitator',
     type: Drops.TYPE_SPECIAL_ROLE,

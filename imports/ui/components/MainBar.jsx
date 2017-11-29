@@ -53,16 +53,19 @@ export default class MainBar extends BaseComponent {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavDropdown title="My Organization" id="basic-nav-dropdown">
-              <NavItem href="/tree/">View Structure as Tree</NavItem>
-              <NavItem href="/holarchy/">View Structure as Holarchy</NavItem>
-              <NavItem href="/waves/create/">Create Wave (modify structure)</NavItem>
-              <NavItem href="/changes/">View last changes</NavItem>
-              <NavItem href="/users/">Users</NavItem>
-              <MenuItem divider />
-              <NavItem href="/">Settings</NavItem>
-            </NavDropdown>
-            <NavItem href="/public/">Public</NavItem>
+            {this.props.stream ?
+              <NavDropdown title={this.props.stream.name} id="basic-nav-dropdown">
+                <NavItem href="/tree/">View Structure as Tree</NavItem>
+                {/* <NavItem href="/holarchy/">View Structure as Holarchy</NavItem> */}
+                <NavItem href="/waves/new/">New Wave</NavItem>
+                <NavItem href="/changes/">View Wave History</NavItem>
+                <NavItem href="/users/">Users</NavItem>
+                {/* <MenuItem divider /> */}
+                {/* <NavItem href="/">Settings</NavItem> */}
+              </NavDropdown>
+            : ''}
+            <NavItem href="/streams/new/">New Stream</NavItem>
+            <NavItem href="/streams/public/">Public Streams</NavItem>
           </Nav>
           {
             this.props.user

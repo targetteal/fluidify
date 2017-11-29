@@ -24,7 +24,7 @@ export default class App extends React.Component {
     } = this.props;
 
     function HTreePageWrapper() {
-      return <HTreePage user={user} stream={stream} />;
+      return <HTreePage stream={stream} />;
     }
 
     function WrapWithLayout(component) {
@@ -32,7 +32,7 @@ export default class App extends React.Component {
         const { history } = props;
         return (
           <div>
-            <MainBar history={history} user={user} />
+            <MainBar stream={stream} history={history} user={user} />
             <div id="main" className="container">
               {React.createElement(component, Object.assign({}, props, { history, user }))}
             </div>
